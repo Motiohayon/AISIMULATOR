@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>סימולטור משכנתא | Sherman-Bit CRM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <img src="assets/logo.png" alt="Sherman-Bit" style="height:48px;">
+        <h1>סימולטור משכנתא מקצועי</h1>
+    </header>
+    <form id="mortgageForm" class="card" autocomplete="off">
+        <h2>פרטים אישיים</h2>
+        <div class="grid">
+            <div>
+                <label>שם מלא</label>
+                <input type="text" id="name" required>
+            </div>
+            <div>
+                <label>אימייל</label>
+                <input type="email" id="email" required>
+            </div>
+            <div>
+                <label>גיל</label>
+                <input type="number" id="age" min="18" max="80" required>
+            </div>
+            <div>
+                <label>מצב משפחתי</label>
+                <select id="status" required>
+                    <option value="">בחר</option>
+                    <option>רווק/ה</option>
+                    <option>נשוי/אה</option>
+                    <option>גרוש/ה</option>
+                    <option>אלמן/ה</option>
+                </select>
+            </div>
+            <div>
+                <label>הכנסה חודשית (₪)</label>
+                <input type="number" id="income" min="0" required>
+            </div>
+            <div>
+                <label>התחייבויות חודשיות (₪)</label>
+                <input type="number" id="debts" min="0" value="0">
+            </div>
+            <div>
+                <label>הון עצמי (₪)</label>
+                <input type="number" id="equity" min="0">
+            </div>
+        </div>
+        <h2>פרטי המשכנתא</h2>
+        <div class="grid">
+            <div>
+                <label>סכום משכנתא (₪)</label>
+                <input type="number" id="amount" min="100000" max="5000000" required>
+            </div>
+            <div>
+                <label>תקופה (שנים)</label>
+                <input type="number" id="years" min="1" max="35" required>
+            </div>
+            <div>
+                <label>ריבית שנתית (%)</label>
+                <input type="number" id="rate" min="0" max="12" step="0.01" required>
+            </div>
+        </div>
+        <button type="submit" class="main-btn">חשב ושמור לקוח</button>
+    </form>
+    <section id="result" class="card" style="display:none;">
+        <h2>תוצאות המשכנתא</h2>
+        <div class="dashboard">
+            <div>
+                <strong>החזר חודשי</strong>
+                <div id="monthly"></div>
+            </div>
+            <div>
+                <strong>סה"כ תשלומים</strong>
+                <div id="total"></div>
+            </div>
+            <div>
+                <strong>סה"כ ריבית</strong>
+                <div id="interest"></div>
+            </div>
+        </div>
+        <h3>לוח סילוקין</h3>
+        <div class="amort-table-wrap">
+            <table id="amortTable">
+                <thead>
+                    <tr>
+                        <th>תשלום</th>
+                        <th>קרן</th>
+                        <th>ריבית</th>
+                        <th>יתרה</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <button onclick="window.location='login.html'" class="main-btn" style="margin-top:20px">כניסת מנהל</button>
+    </section>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

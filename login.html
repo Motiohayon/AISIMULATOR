@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>התחברות</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div class="container login">
+    <form id="loginForm" class="card">
+        <h2>התחברות</h2>
+        <div>
+            <label>אימייל</label>
+            <input type="email" id="user" required>
+        </div>
+        <div>
+            <label>סיסמה</label>
+            <input type="password" id="pass" required>
+        </div>
+        <button type="submit" class="main-btn">התחבר</button>
+        <div id="loginError" class="error"></div>
+        <a href="#" onclick="resetPassword()">שכחת סיסמה?</a>
+    </form>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
